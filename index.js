@@ -124,11 +124,7 @@ dMVC.MongoDBAdapter = dMVC.DbAdapter.subClass({
     },
 
     save: function(model, callback) {
-        var row = new this._table({
-            task: model.task,
-            userID: model.userID,
-            done: model.done
-        });
+        var row = new this._table(model);
         row.save(callback);
     }
 
