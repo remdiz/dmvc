@@ -4,6 +4,8 @@ npm install dmvc
 ```
 Use dmvc_client.js on client-side.
 
+Take a look at the [simple example](https://github.com/remdiz/dmvc-simple-app) shows the basic principles of module.
+
   This is a library for a single-page Web application development.
   Wish List:
   * transfer the entire application logic on the server work. This approach should reduce browser hardware requirements.
