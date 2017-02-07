@@ -103,6 +103,22 @@
 
         },
 
+        find: function(cid) {
+
+            for(var id in this.children) {
+                var child = this.children[id];
+                if(id == cid) {
+                    return child;
+                }
+                if(!_.isEmpty(child.children)) {
+                    var inner = child.find(cid);
+                    if(inner)
+                        return inner;
+                }
+            }
+            return null;
+        },
+
         remove: function(item) {
 
             if(item) {
@@ -154,6 +170,10 @@
                 var tag = opt.htmlTag || "div";
                 this.$element = $("<" + tag + "/>");
             }
+
+            this.$element.addClass(opt.class);
+            this.$element.attr(opt.attrs || {});
+
             //TODO: refactor to method
             if(opt.events) {
                 for(var name in opt.events) {
